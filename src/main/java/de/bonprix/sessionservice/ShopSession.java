@@ -3,6 +3,10 @@ package de.bonprix.sessionservice;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ShopSession {
 	
 	String id;
@@ -67,6 +71,14 @@ public class ShopSession {
 	public String get(String key) {
 		return internal.get(key);
 	}
+	public String getId() {
+		return id;
+	}
+	public Map<String, String> getInternal() {
+		return internal;
+	}
+	
+	
 	
 
 }
